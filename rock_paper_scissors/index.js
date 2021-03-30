@@ -30,13 +30,14 @@ const randomNumber = Math.floor(Math.random() * 3)
     }
 }
 
-console.log(getComputerChoice())
+// console.log(getComputerChoice())
 //Part 3: Compare the two choices and determine the winner
 
 const determineWinner = (userChoice, computerChoice) => {
-    // if(userChoice === computerChoice){
-    //     return"It's a tie!"
-    // } 
+    if(userChoice === computerChoice){
+        return"It's a tie!"
+    } 
+    //nested if statement to be compared with the user choice
     if(userChoice === 'rock'){
         if (computerChoice === 'paper'){
             return 'The computer wins!'
@@ -59,6 +60,20 @@ const determineWinner = (userChoice, computerChoice) => {
         }
     }
 }
+console.log(determineWinner('scissors' , 'scissors'))
 
-console.log(determineWinner())
 //Part 4: Start the program and display the results
+
+const playGame = () => {
+    const userChoice = getUserChoice('rock');
+    const computerChoice = getComputerChoice();
+    console.log('You threw ' + userChoice);
+    console.log('The computer threw: ' + computerChoice);
+    }
+
+
+//Who won?
+
+console.log(determineWinner(userChoice, computerChoice));
+
+console.log(playGame());
